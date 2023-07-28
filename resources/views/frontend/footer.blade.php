@@ -69,10 +69,14 @@
         </div>
     </div>
 
-    <a href="https://www.linkedin.com/in/md-sharif-uddin" target="_blank" class="mt-4 pb-3"> Copyright &copy;<script>
-            document.write(new Date().getFullYear());
+    <aside>
+        <article>
+            <a href="https://www.linkedin.com/in/md-sharif-uddin" target="_blank" class="mt-4 pb-3" alt="https://www.linkedin.com/in/md-sharif-uddin" title="https://www.linkedin.com/in/md-sharif-uddin"> Copyright &copy;<script>
+                    document.write(new Date().getFullYear());
 
-        </script> All rights reserved by Developer</a>
+                </script> All rights reserved by Developer</a>
+        </article>
+    </aside>
 
 </footer>
 <!-- ##### Footer Area End ##### -->
