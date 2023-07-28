@@ -1,19 +1,19 @@
 (function ($) {
-    'use strict';
+    "use strict";
 
     var $window = $(window);
 
     // :: Preloader Active Code
-    $window.on('load', function () {
-        $('#preloader').fadeOut('slow', function () {
+    $window.on("load", function () {
+        $("#preloader").fadeOut("slow", function () {
             $(this).remove();
         });
     });
 
     // :: Nav Active Code
     if ($.fn.classyNav) {
-        $('#originalNav').classyNav();
-        $('#footerNav').classyNav();
+        $("#originalNav").classyNav();
+        $("#footerNav").classyNav();
     }
 
     // :: Newsticker Active Code
@@ -21,8 +21,8 @@
         $.simpleTicker($("#breakingNewsTicker"), {
             speed: 1000,
             delay: 3500,
-            easing: 'swing',
-            effectType: 'roll'
+            easing: "swing",
+            effectType: "roll",
         });
     }
 
@@ -31,64 +31,73 @@
 
     // :: Owl Carousel Active Code
     if ($.fn.owlCarousel) {
-        var welcomeSlide = $('.hero-slides');
+        var welcomeSlide = $(".hero-slides");
         welcomeSlide.owlCarousel({
-            items: 4,
-            margin: 30,
+            items: 1,
+            margin: 20,
             loop: true,
-            center: true,
-            autoplay: true, 
+            // center: true,
+            autoplay: true,
             nav: true,
-            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            navText: [
+                '<i class="fa fa-angle-left"></i>',
+                '<i class="fa fa-angle-right"></i>',
+            ],
             autoplayTimeout: 4000, // Autoplay Timeout 1s = 1000ms
-            smartSpeed: 800,
+            smartSpeed: 900,
             responsive: {
                 0: {
-                    items: 1
+                    items: 1,
                 },
                 480: {
-                    items: 2
+                    items: 1,
                 },
                 576: {
-                    items: 2
+                    items: 1,
                 },
                 992: {
-                    items: 3
+                    items: 2,
                 },
                 1500: {
-                    items: 4
-                }
-            }
+                    items: 2,
+                },
+            },
         });
 
-        welcomeSlide.on('translate.owl.carousel', function () {
+        welcomeSlide.on("translate.owl.carousel", function () {
             var slideLayer = $("[data-animation]");
             slideLayer.each(function () {
-                var anim_name = $(this).data('animation');
-                $(this).removeClass('animated ' + anim_name).css('opacity', '0');
+                var anim_name = $(this).data("animation");
+                $(this)
+                    .removeClass("animated " + anim_name)
+                    .css("opacity", "0");
             });
         });
 
-        welcomeSlide.on('translated.owl.carousel', function () {
-            var slideLayer = welcomeSlide.find('.owl-item.active').find("[data-animation]");
+        welcomeSlide.on("translated.owl.carousel", function () {
+            var slideLayer = welcomeSlide
+                .find(".owl-item.active")
+                .find("[data-animation]");
             slideLayer.each(function () {
-                var anim_name = $(this).data('animation');
-                $(this).addClass('animated ' + anim_name).css('opacity', '1');
+                var anim_name = $(this).data("animation");
+                $(this)
+                    .addClass("animated " + anim_name)
+                    .css("opacity", "1");
             });
         });
 
         $("[data-delay]").each(function () {
-            var anim_del = $(this).data('delay');
-            $(this).css('animation-delay', anim_del);
+            var anim_del = $(this).data("delay");
+            $(this).css("animation-delay", anim_del);
         });
 
         $("[data-duration]").each(function () {
-            var anim_dur = $(this).data('duration');
-            $(this).css('animation-duration', anim_dur);
+            var anim_dur = $(this).data("duration");
+            $(this).css("animation-duration", anim_dur);
         });
 
-        $('.instagram-slides').owlCarousel({
-            items: 7,
+        $(".instagram-slides").owlCarousel({
+            items: 6,
             margin: 5,
             loop: true,
             autoplay: true,
@@ -97,43 +106,47 @@
             smartSpeed: 500,
             responsive: {
                 0: {
-                    items: 2
+                    items: 2,
                 },
                 480: {
-                    items: 3
+                    items: 3,
                 },
                 576: {
-                    items: 4
+                    items: 4,
                 },
                 992: {
-                    items: 5
+                    items: 5,
                 },
                 1500: {
-                    items: 7
-                }
-            }
+                    items: 6,
+                },
+            },
         });
     }
 
     // :: Sticky Active Code
     if ($.fn.sticky) {
         $("#stickyNav").sticky({
-            topSpacing: 0
+            topSpacing: 0,
         });
     }
 
     // :: Countdown Active Code
     if ($.fn.countdown) {
-        $('#clock').countdown('2020/10/10', function (event) {
-            $(this).html(event.strftime('<div>%D <span>Days</span></div> <div>%H <span>Hours</span></div> <div>%M <span>Minutes</span></div> <div>%S <span>Seconds</span></div>'));
+        $("#clock").countdown("2020/10/10", function (event) {
+            $(this).html(
+                event.strftime(
+                    "<div>%D <span>Days</span></div> <div>%H <span>Hours</span></div> <div>%M <span>Minutes</span></div> <div>%S <span>Seconds</span></div>"
+                )
+            );
         });
     }
 
     // :: CounterUp Active Code
     if ($.fn.counterUp) {
-        $('.counter').counterUp({
+        $(".counter").counterUp({
             delay: 10,
-            time: 2000
+            time: 2000,
         });
     }
 
@@ -141,13 +154,13 @@
     if ($.fn.scrollUp) {
         $.scrollUp({
             scrollSpeed: 1000,
-            easingType: 'easeInOutQuart',
-            scrollText: '<i class="fa fa-angle-up"></i>'
+            easingType: "easeInOutQuart",
+            scrollText: '<i class="fa fa-angle-up"></i>',
         });
     }
 
     // :: PreventDefault a Click
-    $("a[href='#']").on('click', function ($) {
+    $("a[href='#']").on("click", function ($) {
         $.preventDefault();
     });
 
@@ -155,5 +168,4 @@
     if ($window.width() > 767) {
         new WOW().init();
     }
-
 })(jQuery);

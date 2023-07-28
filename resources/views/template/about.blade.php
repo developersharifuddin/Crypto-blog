@@ -1,10 +1,9 @@
 @extends('layouts.master')
 @section("title")
-Info Zit
+About-us
 @endsection
 
 @section('content')
-
 
 <!-- Page Banner Start -->
 

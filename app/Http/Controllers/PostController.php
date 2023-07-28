@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Carbon\Carbon;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -46,9 +47,9 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => 'required|min:5|max:200',
             'sub_title' => 'required|max:255',
-            'description' => 'required|max:10000',
+            'description' => 'required|max:100000',
             'images' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
-          ], [
+        ], [
             'title.required' => 'title is required',
             'title.unique' => 'This title is already taken',
             'title.min' => 'Title max length is 5',
@@ -72,7 +73,7 @@ class PostController extends Controller
 
         if (isset($images)) {
             $currentDate = Carbon::now()->toDateString();
-            $images_name = $title . '-' .uniqid() . '_'.$currentDate . '-' . '.' . $images->getClientOriginalExtension();
+            $images_name = $title . '-' . uniqid() . '_' . $currentDate . '-' . '.' . $images->getClientOriginalExtension();
             if (!file_exists('uploads/images')) {
                 mkdir('uploads/images', true);
             }
@@ -99,7 +100,7 @@ class PostController extends Controller
         $post->ip_address = $ip_address;
         $post->save();
         Session::flash('message', 'Successfully created shark!');
-       return redirect('post')->with('status', 'Product Has Been Added');
+        return redirect('post')->with('status', 'Product Has Been Added');
     }
 
     /**
@@ -128,7 +129,6 @@ class PostController extends Controller
         return view('content.post.edit', [
             'post' => Post::find($id),
         ]);
-
     }
 
     /**
@@ -143,9 +143,9 @@ class PostController extends Controller
         $validated = $request->validate([
             'title' => 'required|min:5|max:200',
             'sub_title' => 'required|max:255',
-            'description' => 'required|max:10000',
+            'description' => 'required|max:100000',
             'images' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048'
-          ], [
+        ], [
             'title.required' => 'title is required',
             'title.unique' => 'This title is already taken',
             'title.min' => 'Title max length is 5',
@@ -157,19 +157,19 @@ class PostController extends Controller
 
 
 
-        $post =Post::find($id);
+        $post = Post::find($id);
 
         $title = str_slug($request->title);
         $images = $request->file('images');
 
         if (isset($images)) {
             $currentDate = Carbon::now()->toDateString();
-            $images_name = $title . '-' .uniqid() . '_'.$currentDate . '-' . '.' . $images->getClientOriginalExtension();
+            $images_name = $title . '-' . uniqid() . '_' . $currentDate . '-' . '.' . $images->getClientOriginalExtension();
             if (!file_exists('uploads/images')) {
                 mkdir('uploads/images', true);
             }
             $images->move('uploads/images', $images_name);
-        } else{
+        } else {
             if (isset($post->images)) {
                 $images_name = $post->images;
             }
@@ -192,7 +192,7 @@ class PostController extends Controller
         $post->ip_address = $ip_address;
         $post->save();
         Session::flash('message', 'Successfully created shark!');
-       return redirect('post')->with('status', 'Product Has Been Added');
+        return redirect('post')->with('status', 'Product Has Been Added');
     }
 
     /**
@@ -202,11 +202,11 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-        public function destroy($id)
-        {
-           Post::find($id)->delete();
-           return redirect()->route('post.index')->with('success', 'Connection destroyed Successfully');
-        }
+    public function destroy($id)
+    {
+        Post::find($id)->delete();
+        return redirect()->route('post.index')->with('success', 'Connection destroyed Successfully');
+    }
 
 
     public function status(Request $request)
@@ -225,10 +225,10 @@ class PostController extends Controller
     public function trashed()
     {
         $trashData = Post::withTrashed()->whereNotNull('deleted_at')->paginate(15);
-       // return view('content.post.trash', ['trashlist' => $trashData]);
-         return view('content.post.trash', [
-        'posts' => Post::withTrashed()->whereNotNull('deleted_at')->paginate(15),
-    ]);
+        // return view('content.post.trash', ['trashlist' => $trashData]);
+        return view('content.post.trash', [
+            'posts' => Post::withTrashed()->whereNotNull('deleted_at')->paginate(15),
+        ]);
     }
 
 
@@ -252,5 +252,4 @@ class PostController extends Controller
             return response()->json($error->getMessage(), 422);
         }
     }
-
 }

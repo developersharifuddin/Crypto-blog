@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\Admin\BrandController;
@@ -15,17 +16,6 @@ use App\Http\Controllers\Admin\CompanyInformationController;
 
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
-
-
 Route::get('/',  [HomeController::class, 'index'])->name('home');
 Route::get('/singlepost/{id}',  [HomeController::class, 'singlepost'])->name('singlepost');
 Route::get('/about',  [HomeController::class, 'about'])->name('about');
@@ -33,8 +23,11 @@ Route::get('/commingsoon',  [HomeController::class, 'commingsoon'])->name('commi
 Route::get('/contact',  [HomeController::class, 'contact'])->name('contact');
 Route::post('/contact-us',  [HomeController::class, 'contactus'])->name('contactus');
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 
     Route::resource('post', PostController::class);
     Route::post('post/{id}/status', [PostController::class, 'status'])->name('post.status');
@@ -110,8 +103,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/team_member/destroy/{id}',  [\App\Http\Controllers\Admin\TeamMemberController::class, 'destroy'])->name('team_member.destroy');
     Route::get('/team_member/changestatus/{id}',  [\App\Http\Controllers\Admin\TeamMemberController::class, 'status'])->name('team_member.status');
 
-
-
     Route::get('/company_information',  [\App\Http\Controllers\Admin\CompanyInformationController::class, 'index'])->name('admin.companyinfo');
     Route::post('/company_information/store',  [\App\Http\Controllers\Admin\CompanyInformationController::class, 'store'])->name('companyinfo.store');
     Route::post('/company_information/update',  [\App\Http\Controllers\Admin\CompanyInformationController::class, 'update'])->name('companyinfo.update');
@@ -150,11 +141,22 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
 
 
-
     Route::get('/visitors', [\App\Http\Controllers\Admin\DashboardController::class, 'visitors']);
 
     Route::get('/contactData', [\App\Http\Controllers\AdminController::class, 'contactData'])->name('contactlist');
     //genarate pdf
     Route::get('/contact-list',  [\App\Http\Controllers\Admin\MpdfContactListController::class, 'viewPdfContactList'])->name('pdfContactList');
+});
 
+
+Route::fallback(function () {
+    if (Auth::check()) {
+        return view("content.404");
+    } else {
+        return view(404);
+    }
+});
+
+Route::get('/register', function () {
+    return view(404);
 });
