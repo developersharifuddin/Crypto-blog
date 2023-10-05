@@ -2,7 +2,7 @@
 <div class="content-wrapper">
     <div class="container-fluid">
         <!-- ##### Single Blog Area Start ##### -->
-        <div class="single-blog-wrapper section-padding-0-100">
+        <div class="single-blog-wrapper section-padding-0-100 mt-5">
             <div class="container">
                 <div class="row mx-auto mt-3">
                     <!-- ##### Post Content Area ##### -->
@@ -13,10 +13,10 @@
                             <div class="single-blog-content">
                                 <div class="line"></div>
                                 <img src="{{asset('uploads/images/'.$post->images)}}" alt="">
-                                <h4><a href="#" class="post-headline mb-0 mt-3">{{$post->title}}</a></h4>
+                                <h2 style="margin-top:10px"><a href="#" class="post-headline mb-0">{{$post->title}}</a></h2>
                                 <div class="post-meta mb-1">
                                     <p>By <a href="#">{{$post->user->name}}</a></p>
-                                    <p>3 comments</p>
+                                    <p>10 comments</p>
                                 </div>
                                 <div class="post-meta mt-0">
                                     <p> <a href="{{ route('singlepost',$post->id) }}">{{$post->sub_title}}</a></p>
@@ -35,9 +35,9 @@
                                 <!-- Single Comment Area -->
                                 <li class="single_comment_area">
                                     <!-- Comment Content -->
-                                    <div class="comment-content d-flex">
+                                    <div class="comment-content d-flex bg-light p-3">
                                         <!-- Comment Author -->
-                                        <div class="comment-author">
+                                        <div class="comment-author p-0 m-0">
                                             <img src="{{asset('uploads/images/'.$post->images)}}" alt="author" style="height: 60px; width:60px">
                                         </div>
                                         <!-- Comment Meta -->
@@ -53,13 +53,13 @@
                                             <!-- Comment Content -->
                                             <div class="comment-content d-flex">
                                                 <!-- Comment Author -->
-                                                <div class="comment-author">
+                                                <div class="comment-author p-0 m-0">
                                                     <img src="{{asset('uploads/images/'.$post->images)}}" alt="author" style="height: 60px; width:60px">
                                                 </div>
                                                 <!-- Comment Meta -->
                                                 <div class="comment-meta">
                                                     <a href="#" class="post-date">March 12</a>
-                                                    <p><a href="#" class="post-author">William James</a></p>
+                                                    <p><a href="#" class="post-author">Anal Cimiy</a></p>
                                                     <p>
                                                         Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt.</p>
                                                     <a href="#" class="comment-reply">Reply</a>
@@ -72,15 +72,15 @@
                                 <!-- Single Comment Area -->
                                 <li class="single_comment_area">
                                     <!-- Comment Content -->
-                                    <div class="comment-content d-flex">
+                                    <div class="comment-content d-flex bg-light p-3">
                                         <!-- Comment Author -->
-                                        <div class="comment-author">
+                                        <div class="comment-author  p-0 m-0">
                                             <img src="{{asset('uploads/images/'.$post->images)}}" alt="author" style="height: 60px; width:60px">
                                         </div>
                                         <!-- Comment Meta -->
                                         <div class="comment-meta">
                                             <a href="#" class="post-date">March 12</a>
-                                            <p><a href="#" class="post-author">William James</a></p>
+                                            <p><a href="#" class="post-author">Roboart Jemas</a></p>
                                             <p>Nullam vestibulum convallis risus vel condimentum. Nullam auctor lorem in libero luctus, vel volutpat quam tincidunt.</p>
                                             <a href="#" class="comment-reply">Reply</a>
                                         </div>
@@ -141,15 +141,7 @@
 
                             <!-- Widget Area -->
                             <div class="sidebar-widget-area">
-                                <form action="#" class="search-form">
-                                    <input type="search" name="search" id="searchForm" placeholder="Search">
-                                    <input type="submit" value="submit">
-                                </form>
-                            </div>
-
-                            <!-- Widget Area -->
-                            <div class="sidebar-widget-area">
-                                <h5 class="title subscribe-title">Subscribe to my newsletter</h5>
+                                <h3 class="title subscribe-title">Subscribe to my newsletter</h3>
                                 <div class="widget-content">
                                     <form action="#" class="newsletterForm">
                                         <input type="email" name="email" id="subscribesForm" placeholder="Your e-mail here">
@@ -160,13 +152,13 @@
 
                             <!-- Widget Area -->
                             <div class="sidebar-widget-area">
-                                <h5 class="title">Advertisement</h5>
-                                <a href="#"><img src="img/post2.jpeg" alt=""></a>
+                                {{-- <h3 class="title">Advertisement</h3> --}}
+                                <a href="#"><img src="{{asset("frontend/img/add.gif")}}" alt="" width="100%"></a>
                             </div>
 
                             <!-- Widget Area -->
                             <div class="sidebar-widget-area">
-                                <h5 class="title">Latest Posts</h5>
+                                <h3 class="title">Latest Posts</h3>
 
                                 <div class="widget-content">
                                     @foreach ($posts as $post)

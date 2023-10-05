@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Title -->
     <title>Home - Shifat Blog</title>
     <!-- Favicon -->
     <link rel="icon" href="{{asset('frontend/img/logo.png')}}">
     <!-- Style CSS -->
-    <link rel="stylesheet" href="{{asset('frontend/style.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend/custom-style.css')}}">
+
 </head>
 
 <body>
@@ -48,7 +50,7 @@
     <header class="header-area">
         <!-- Top Header Area -->
         <div class="top-header py-lg-1 my-auto">
-            <div class="container">
+            <div class="container px-2 px-md-0">
                 <div class="row align-items-center">
                     <!-- Breaking News Area -->
                     <div class="col-3 col-sm-3 py-0">
@@ -90,7 +92,7 @@
         <!-- Nav Area -->
         <div class="original-nav-area border-bottom py-0 my-0" id="stickyNav">
             <div class="classy-nav-container breakpoint-off py-0 my-0">
-                <div class="container py-0 my-0">
+                <div class="container py-0 my-0 px-2 px-md-0">
                     <!-- Classy Menu -->
                     <nav class="classy-navbar justify-content-between py-0 my-0">
                         <a href="/" class="original-log"><img src="{{asset('frontend/img/logo.png')}}" alt="" style="height: 60px;"></a>

@@ -91,6 +91,7 @@
 <script src="{{asset('frontend/js/plugins.js')}}"></script>
 <!-- Active js -->
 <script src="{{asset('frontend/js/active.js')}}"></script>
+
 <script>
     $(document).ready(function() {
         $(".navbarToggler").click(function() {

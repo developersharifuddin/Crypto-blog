@@ -34,11 +34,14 @@
         var welcomeSlide = $(".hero-slides");
         welcomeSlide.owlCarousel({
             items: 1,
-            margin: 20,
+            // margin: 10,
             loop: true,
-            // center: true,
+            center: true,
             autoplay: true,
-            nav: true,
+            // nav: true,
+            centerMode: true,
+            fade: true,
+            cssEase: "linear",
             navText: [
                 '<i class="fa fa-angle-left"></i>',
                 '<i class="fa fa-angle-right"></i>',
@@ -56,10 +59,10 @@
                     items: 1,
                 },
                 992: {
-                    items: 2,
+                    items: 1,
                 },
                 1500: {
-                    items: 2,
+                    items: 1,
                 },
             },
         });
@@ -101,6 +104,7 @@
             margin: 5,
             loop: true,
             autoplay: true,
+            centerMode: true,
             autoplayHoverPause: true,
             autoplayTimeout: 1300, // Autoplay Timeout 1s = 1000ms
             smartSpeed: 500,

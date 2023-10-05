@@ -134,7 +134,7 @@
                             <div class="post-meta mt-0">
                                         <p>By <a href="{{ url('/') }}">Shifat ullah</a></p>
                                     </div>
-                            <h4><a href="{{ url('/post') }}" class="post-headline">Welcome to this Cripto Detector blog</a></h4>
+                            <h4><a href="{{ url('/post') }}" class="post-headline">Welcome to this Cripto Detector9 blog</a></h4>
                             <p>Curabitur venenatis efficitur lorem sed tempor.
                                 Integer aliquet tempor cursus
                                   dolor id ultricies dictum</p>
@@ -154,7 +154,7 @@
                                     <div class="col-12">
                                         <div class="slide-content text-center">
                                             <div class="post-tag">
-                                                <a href="{{ route('singlepost',$post->id) }}" data-animation="fadeInUp">Cripto Detector</a>
+                                                <a href="{{ route('singlepost',$post->id) }}" data-animation="fadeInUp">Cripto Detector9</a>
                                             </div>
                                             <h2 data-animation="fadeInUp" data-delay="250ms"><a href="{{ route('singlepost',$post->id) }}">Take a look at last night’s party!</a></h2>
                                         </div>

@@ -8,17 +8,8 @@
     box-shadow: none;
 }
 
-body {
-    color: #454545;
-    background: white;
-    font-weight: 400;
-    line-height: 28px;
-    font-size: 16px;
-    font-family: "Rubik", sans-serif;
-}
-
 a {
-    color: #454545;
+    color: #373737;
     cursor: pointer;
     outline: none;
     -webkit-transition: 0.5s;
@@ -545,13 +536,6 @@ a.theme-btn.gradient-btn-one:not(hover):before {
     width: 0;
     height: 0;
     opacity: 0;
-}
-@media only screen and (max-width: 480px) {
-    .theme-btn,
-    a.theme-btn {
-        font-size: 14px;
-        padding: 12px 25px;
-    }
 }
 
 .learn-more {

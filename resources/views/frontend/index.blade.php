@@ -1,13 +1,6 @@
 @include('frontend.header')
 
 <style>
-    .user .live-link {
-        font-weight: normal !important;
-        font-size: 11px;
-    }
-
-</style>
-<style>
     .fa-comment {
         display: none;
         color: rgb(104, 101, 241);
@@ -129,42 +122,42 @@
 <div class="blog-wrapper section-padding pt-3 clearfix">
     <div class="container-fluid mb-md-5">
         <div class="container px-0 px-md-auto">
-            <div class="row align-items-end">
+            <div class="row align-items-center h-auto my-4">
                 <!-- Single Blog Area -->
-                <div class="col-12 col-lg-4 mt-0">
-                    <div class="single-blog-area clearfix mb-50">
+                <div class="col-12 col-lg-7">
+                    <div class="single-blog-area clearfix mb-50 mr-lg-2">
                         <!-- Blog Content -->
                         <div class="single-blog-content">
                             <div class="post-meta mt-0">
-                                <p><a href="{{ url('/') }}">Admin Cripto Currency</a></p>
+                                <p><a href="{{ url('/') }}">Cripto Detector9</a></p>
                             </div>
                             <div class="line"></div>
+                            <h2><a href="{{ url('/') }}" class="post-headline">Welcome to Our Cripto Detector9</a></h2>
                             <div class="post-meta mt-0">
-                                <p>By <a href="{{ url('/') }}">Shifat ullah</a></p>
+                                <p>By <a href="{{ url('/') }}"> Cripto Detector9 Community</a></p>
                             </div>
-                            <h4><a href="{{ url('/post') }}" class="post-headline">Welcome to this Cripto Detector blog</a></h4>
-                            <p>Curabitur venenatis efficitur lorem sed tempor.
-                                Integer aliquet tempor cursus
-                                dolor id ultricies dictum</p>
+                            <p style="font-size:16px; text-align:justify;  ">
+                                Crypto Detector is a crypto media and crypto enthusiast community based in Asia and sea that discusses Cryptocurency and Blockchain. Detector is a crypto media and crypto enthusiast community based in Asia and sea that discusses Cryptocurency and Blockchain.
+                            </p>
                             <a href="{{ url('/') }}" class="btn original-btn">Read More</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-8 mt-0">
+                <div class="col-12 col-lg-5 mt-0">
                     <div class="hero-area">
                         <!-- Hero Slides Area -->
-                        <div class="hero-slides owl-carousel d-sm-block d-md-non py-2 py-md-3">
+                        <div class="hero-slides owl-carousel d-none d-md-block">
                             @foreach ($posts as $post)
                             <!-- Single Slide -->
                             <div class="single-hero-slide bg-img" style="background-image: url({{asset('uploads/images/'.$post->images)}}); background-size: contain; background-repeat: no-repeat;">
-                                <div class="container h-100">
+                                <div class="container">
                                     <div class="row h-100 align-items-center">
                                         <div class="col-12">
                                             <div class="slide-content text-center">
                                                 <div class="post-tag">
-                                                    <a href="{{ route('singlepost',$post->id) }}" data-animation="fadeInUp">Cripto Detector</a>
+                                                    <a href="{{ route('singlepost',$post->id) }}" data-animation="fadeInUp">Cripto Detector9</a>
                                                 </div>
-                                                <h2 data-animation="fadeInUp" data-delay="250ms"><a href="{{ route('singlepost',$post->id) }}">Take a look at last night’s party!</a></h2>
+                                                {{-- <h2 data-animation="fadeInUp" data-delay="250ms"><a href="{{ route('singlepost',$post->id) }}">Take a look at last night’s party!</a></h2> --}}
                                             </div>
                                         </div>
                                     </div>
@@ -183,13 +176,13 @@
     <div class="container px-0 px-md-auto mb-0">
         <div class="row justify-content-center mx-auto mb-0">
             <!-- Single Blog Area -->
-            <div class="col-12 col-md-8 col-lg-8 mt-0 pr-lg-5">
-                <p class="mb-2" style=" text-align:justify mt-5"><b>Our Latest Blog Post </b> </p>
+            <div class="col-12 col-md-8 col-lg-8 mt-0 pr-lg-5 pl-3 p-md-0">
+                <h3 class="mb-2" style=" text-align:justify mt-5"><b><i class="fa-solid fa-blog"></i> Our Latest Blog Post </b> </h3>
                 @foreach ($posts as $post)
                 <!-- Single Blog Area  -->
-                <div class="single-blog-area blog-style-2 wow fadeInUp p-2 mb-2 mb-md-4 border-bottom" data-wow-delay="0.2s" data-wow-duration="1000ms">
+                <div class="single-blog-area blog-style-2 wow fadeInUp p-0 mb-2 mb-md-5 pb-md-5 border-bottom" data-wow-delay="0.2s" data-wow-duration="1000ms">
                     <div class="row my-auto">
-                        <div class="col-6 col-md-6 col-lg-6 pr-2 my-auto">
+                        <div class="col-6 col-md-6 col-lg-6 pr-0 my-auto">
                             <div class="post-user-append pb-3 pb-md-0 my-auto"></div>
                             <div class="single-blog-thumbnail text:right">
                                 <a href="{{ route('singlepost',$post->id) }}">
@@ -199,23 +192,24 @@
                         </div>
 
 
-                        <div class="col-6 col-md-6 col-lg-6 px-1">
+                        <div class="col-6 col-md-6 col-lg-6 pl-3">
                             <!-- Blog Content -->
                             <div class="single-blog-content">
                                 <div class="c">
                                     <div class="post-head col-12 col-md-12 px-0 pt-2 mx-0 my-auto">
 
-                                        <h4 class="pb-0 mb-0 mt-2"><a href="{{ route('singlepost',$post->id) }}" class="post-headline">{!! Str::limit($post->title, 22, ' ...') !!}</a></h4>
+                                        <h3 class="pb-0 mb-0 mt-2"><a href="{{ route('singlepost',$post->id) }}" class="post-headline">{!! Str::limit($post->title, 35, ' ...') !!}</a></h3>
                                         <div class="post-meta mt-0">
-                                            <p>By <a href="{{ route('singlepost',$post->id) }}">{!! Str::limit($post->name, 40, ' ...') !!}</a></p>
+                                            <p><i class="fa-solid fa-user-tie"></i> <span style="color:#17a2b8; text-transfrom:capitalize">By</span>{!! Str::limit($post->name, 20, ' ...') !!}</p>
                                         </div>
-                                        <div class="user" style="line-height: .4;">
-                                            <a href="{{ route('singlepost',$post->id) }}" class="live-link">Post <span>{{date('D-M-y h:i A',strtotime($post->date))}}</span></a>
-                                        </div>
-                                        <p class="pr-2 d-none d-md-block" style=" text-align:justify;">
+
+                                        <p class="pr-2 d-none d-md-block" style=" text-align:left; color:#444; font-size:16px; line-height:1.6;  word-spacing: 7px; ">
                                             {{-- {!!\Illuminate\Support\Str::limit(html_entity_decode($post->description),300,"...")!!} --}}
-                                            {!! \Illuminate\Support\Str::limit(strip_tags($post->description), 160, '...') !!}
+                                            {!! \Illuminate\Support\Str::limit(strip_tags($post->description), 90, '...') !!}
                                         </p>
+                                        <div class="user mb-3">
+                                            <span class="live-link" style="color:#555"><i class="fa-regular fa-clock"></i> Post <span>{{date('D-M-y h:i A',strtotime($post->date))}}</span></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -232,15 +226,7 @@
 
                     <!-- Widget Area -->
                     <div class="sidebar-widget-area">
-                        <form action="#" class="search-form">
-                            <input type="search" name="search" id="searchForm" placeholder="Search">
-                            <input type="submit" value="submit">
-                        </form>
-                    </div>
-
-                    <!-- Widget Area -->
-                    <div class="sidebar-widget-area">
-                        <h5 class="title subscribe-title">Subscribe to my newsletter</h5>
+                        <h5 class="title subscribe-title">Subscribe to Our Newsletter</h5>
                         <div class="widget-content">
                             <form action="#" class="newsletterForm">
                                 <input type="email" name="email" id="subscribesForm" placeholder="Your e-mail here">
@@ -251,12 +237,12 @@
 
                     <!-- Widget Area -->
                     <div class="sidebar-widget-area">
-                        <h5 class="title mb-3">Advertisement</h5>
-                        <a href="#"><img src="frontend/img/add.gif" alt="" width="100%"></a>
+                        {{-- <h5 class="title mb-3">Advertisement</h5> --}}
+                        <a href="#"><img src="{{asset("frontend/img/add.gif")}}" alt="" width="100%"></a>
                     </div>
 
                     <!-- Widget Area -->
-                    <div class="sidebar-widget-area">
+                    <div class="sidebar-widget-area  d-none d-md-block">
                         <h5 class="title mb-3">Latest Posts</h5>
 
                         <div class="widget-content">

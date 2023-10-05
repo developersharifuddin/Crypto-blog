@@ -25,7 +25,6 @@ h6 {
     color: #000000;
     font-weight: 500;
     line-height: 1.3;
-    font-family: "Poppins", Sans-serif;
 }
 
 p {
@@ -40,9 +39,8 @@ a {
     transition-duration: 500ms;
     text-decoration: none;
     outline: none;
-    font-size: 14px;
     font-family: "Poppins", Sans-serif;
-    color: #1b1b1b;
+    color: #00242b;
 }
 a:hover,
 a:focus {
@@ -51,7 +49,6 @@ a:focus {
     transition-duration: 500ms;
     text-decoration: none;
     outline: none;
-    font-size: 14px;
 }
 
 #preloader {
@@ -602,6 +599,7 @@ img {
         height: 200px;
     }
 }
+
 .hero-slides .single-hero-slide .slide-content {
     display: none;
 }
@@ -736,7 +734,7 @@ img {
 .single-blog-area .single-blog-content h4 a {
     display: inline-block;
     color: #272626;
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 0px;
 }
 .single-blog-area .single-blog-content h4 a:hover,
@@ -751,7 +749,6 @@ img {
 .single-blog-area .single-blog-content > p {
     line-height: 1.6;
     margin-bottom: 10px;
-    font-size: 12px;
     font-weight: 400;
     color: rgb(49, 48, 48);
 }
@@ -761,9 +758,8 @@ img {
     }
 }
 .single-blog-area .single-blog-content .post-meta p {
-    font-size: 9px;
     text-transform: uppercase;
-    margin-bottom: 0;
+    margin-bottom: 5;
     letter-spacing: 3px;
     display: inline-block;
 }
@@ -771,7 +767,6 @@ img {
     margin-right: 30px;
 }
 .single-blog-area .single-blog-content .post-meta p a {
-    font-size: 9px;
     text-transform: uppercase;
     color: #000000;
     letter-spacing: 3px;
@@ -909,7 +904,7 @@ img {
     background-color: #30336b;
 }
 .sidebar-widget-area .title {
-    font-size: 18px;
+    /* font-size: 18px; */
     margin-bottom: 52px;
 }
 .sidebar-widget-area .title.subscribe-title {
@@ -1908,5 +1903,33 @@ textarea:focus ~ .highlight {
 @media only screen and (max-width: 767px) {
     .single-blog-thumbnail img {
         width: 100%;
+    }
+}
+
+.classynav ul li a {
+    padding: 0 12px;
+    display: block;
+    height: 35px;
+    font-size: 16px;
+    line-height: 34px;
+    color: #063d45;
+}
+.classynav ul li a:hover {
+    padding: 0 12px;
+    display: block;
+    height: 35px;
+    font-size: 16px;
+    line-height: 34px;
+    color: #57060e;
+}
+
+.align-items-end {
+    -webkit-box-align: top !important;
+    -ms-flex-align: top !important;
+}
+
+@media only screen and (max-width: 767px) {
+    .post-head h3 {
+        font-size: 18px !important;
     }
 }
