@@ -147,7 +147,7 @@
                     <div class="hero-area">
                         <!-- Hero Slides Area -->
                         <div class="hero-slides owl-carousel d-none d-md-block">
-                            @foreach ($posts as $post)
+                            @foreach ($posts->take(5) as $post)
                             <!-- Single Slide -->
                             <div class="single-hero-slide bg-img" style="background-image: url({{asset('uploads/images/'.$post->images)}}); background-size: contain; background-repeat: no-repeat;">
                                 <div class="container">
@@ -217,8 +217,8 @@
 
                     </div>
                 </div>
-
                 @endforeach
+                <div class="paginate"> {{ $posts->links() }}</div>
             </div>
 
             <div class="col-12 col-md-4 col-lg-4 bg-light">
@@ -260,7 +260,7 @@
                 <h5 class="title mb-3">Latest Posts</h5>
 
                 <div class="widget-content">
-                    @foreach ($posts as $post)
+                    @foreach ($posts->take(5) as $post)
                     <!-- Single Blog Post -->
                     <div class="row px-md-5">
 

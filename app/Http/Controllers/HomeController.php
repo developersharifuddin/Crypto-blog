@@ -27,7 +27,7 @@ class HomeController extends Controller
         return view('frontend.index', [
             'posts' => Post::where('is_active', 1)
                 ->leftJoin('users', 'posts.user_id', 'users.id')
-                ->select('posts.*', 'users.name')->latest()->get(),
+                ->select('posts.*', 'users.name')->latest()->paginate(7),
             'old_posts' => Post::where('is_active', 1)->get(),
         ]);
     }

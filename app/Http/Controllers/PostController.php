@@ -21,7 +21,7 @@ class PostController extends Controller
     public function index()
     {
         return view('content.post.post', [
-            'posts' => Post::latest()->paginate(10),
+            'posts' => Post::latest()->paginate(4),
         ]);
     }
 

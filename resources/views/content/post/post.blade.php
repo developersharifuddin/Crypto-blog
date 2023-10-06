@@ -66,7 +66,7 @@ Admin | Post
                                 @endforelse
                             </tbody>
                         </table>
-                        <div class="bg-info p-3"> {{ $posts->links() }}</div>
+                        <div class="paginate p-3"> {{ $posts->links() }}</div>
                     </div>
                     <!-- /.card-body -->
                 </div>

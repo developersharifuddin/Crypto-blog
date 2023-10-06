@@ -286,6 +286,41 @@
             border-radius: 50%;
         }
 
+        .paginate {
+            color: black;
+            text-decoration: none;
+            font-size: 18px !important;
+        }
+
+        .paginate svg {
+            height: 14px !important;
+            font-size: 18px !important;
+            width: 18px !important;
+        }
+
+        .paginate .hidden {
+            height: 80px !important;
+            font-size: 18px !important;
+        }
+
+        .paginate div p.leading-5 {
+            display: none !important;
+        }
+
+        nav {
+            /* width: 100% !important; */
+            display: flex !important;
+            width: auto;
+        }
+
+        .paginate nav .flex-1 {
+            display: none !important;
+        }
+
+        nav .flex span {
+            display: none !important;
+        }
+
     </style>
 
     @stack('css')
