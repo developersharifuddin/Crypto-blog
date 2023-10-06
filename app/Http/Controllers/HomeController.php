@@ -88,6 +88,7 @@ class HomeController extends Controller
             [
                 'name.required' => 'Please input your name',
                 'email.required' => 'Please input your email',
+                'subject.required' => 'Please input your subject',
                 'description.required' => 'Please input your message',
                 'name.max' => 'your Name Less Than 25 Charaters'
             ]
@@ -102,7 +103,7 @@ class HomeController extends Controller
             'description' => $request->description,
             'ip_address' => $UserIP,
         ]);
-        Toastr::success('Your Information will be sent Successfully', 'success', ["positionClass" => "toast-top-right"]);
-        return redirect()->route("contact");
+        Session::flash('success', 'Your Information will be sent Successfully');
+        return redirect()->route('contact');
     }
 }

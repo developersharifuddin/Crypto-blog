@@ -90,5 +90,6 @@
         </div>
     </div>
 </section>
-<!-- ##### Contact Area End ##### -->
+
+
 @include('frontend.footer')
