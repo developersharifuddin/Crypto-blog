@@ -14,6 +14,9 @@
 body {
     font-family: "Poppins", Sans-serif;
     background-color: #ffffff;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 h1,
@@ -1928,8 +1931,60 @@ textarea:focus ~ .highlight {
     -ms-flex-align: top !important;
 }
 
+@media only screen and (min-width: 991px) {
+    .single-blog-thumbnail img {
+        width: 100%;
+    }
+    .post-head h3 {
+        font-size: 22px !important;
+        overflow: hidden !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 2 !important; /* number of lines to show */
+        line-clamp: 2 !important;
+        -webkit-box-orient: vertical;
+    }
+    .post-head .post-descriptions {
+        overflow: hidden !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 3 !important; /* number of lines to show */
+        line-clamp: 3 !important;
+        -webkit-box-orient: vertical !important;
+        margin-bottom: 7px !important;
+    }
+    .post-meta p {
+        margin-bottom: 0.3rem !important;
+        font-size: 12px !important;
+        color: orange;
+        text-transform: capitalize !important;
+    }
+    .live-link {
+        font-size: 13px !important;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .post-head h3 {
-        font-size: 18px !important;
+        font-size: 15px !important;
+        overflow: hidden !important;
+        display: -webkit-box;
+        -webkit-line-clamp: 2 !important; /* number of lines to show */
+        line-clamp: 2 !important;
+        -webkit-box-orient: vertical;
+    }
+    .post-meta p {
+        margin-bottom: 0.1rem !important;
+        font-size: 11px !important;
+    }
+    .live-link {
+        font-size: 10px !important;
+    }
+    .post-head h3 {
+        margin-top: 7px !important;
+    }
+    .single-blog-content h1 {
+        font-size: 28px !important;
+        font-weight: 600;
+        line-height: 1.5 !important;
+        text-align: left;
     }
 }

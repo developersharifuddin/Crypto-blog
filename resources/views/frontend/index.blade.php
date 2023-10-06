@@ -198,17 +198,17 @@
                                 <div class="c">
                                     <div class="post-head col-12 col-md-12 px-0 pt-2 mx-0 my-auto">
 
-                                        <h4 class="pb-0 mb-0 mt-2"><a href="{{ route('singlepost',$post->id) }}" class="post-headline">{!! Str::limit($post->title, 45, ' ..') !!}</a></h4>
+                                        <h3 class="pb-0 mb-0 mt-2"><a href="{{ route('singlepost',$post->id) }}" class="post-headline">{!! Str::limit($post->title, 60, ' ..') !!}</a></h3>
                                         <div class="post-meta mt-0">
-                                            <p style="font-size:13px"><i class="fa-solid fa-user-tie"></i> <span style="color:#17a2b8; text-transfrom:capitalize">By</span>{!! Str::limit($post->name, 20, ' ..') !!}</p>
+                                            <p><i class="fa-solid fa-user-tie"></i> <span style="color:#17a2b8;">By </span> {!! Str::limit($post->name, 20, ' ..') !!}</p>
                                         </div>
 
-                                        <p class="pr-2 d-none d-md-block" style=" text-align:left; color:#444; font-size:15px; line-height:1.6;">
+                                        <p class="pr-2 d-none d-md-block post-descriptions" style=" text-align:left; color:#444; font-size:15px; line-height:1.6;">
                                             {{-- {!!\Illuminate\Support\Str::limit(html_entity_decode($post->description),300,"...")!!} --}}
-                                            {!! \Illuminate\Support\Str::limit(strip_tags($post->description), 90, '..') !!}
+                                            {!! \Illuminate\Support\Str::limit(strip_tags($post->description), 140, '..') !!}
                                         </p>
                                         <div class="user mb-3">
-                                            <span class="live-link" style="color:#555;font-size:13px"><i class="fa-regular fa-clock"></i> Post <span>{{date('D-M-y h:i A',strtotime($post->date))}}</span></span>
+                                            <span class="live-link"><i class="fa-regular fa-clock"></i> Post <span>{{date('D-M-y h:i A',strtotime($post->date))}}</span></span>
                                         </div>
                                     </div>
                                 </div>
