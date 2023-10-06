@@ -38,7 +38,7 @@
                                     <div class="comment-content d-flex bg-light p-3">
                                         <!-- Comment Author -->
                                         <div class="comment-author p-0 m-0">
-                                            <img src="{{asset('uploads/images/'.$post->images)}}" alt="author" style="height: 60px; width:60px">
+                                            <img src="{{asset('uploads/images/user.jpg')}}" alt="author" style="height: 60px; width:60px">
                                         </div>
                                         <!-- Comment Meta -->
                                         <div class="comment-meta">
@@ -54,7 +54,7 @@
                                             <div class="comment-content d-flex">
                                                 <!-- Comment Author -->
                                                 <div class="comment-author p-0 m-0">
-                                                    <img src="{{asset('uploads/images/'.$post->images)}}" alt="author" style="height: 60px; width:60px">
+                                                    <img src="{{asset('uploads/images/user.jpg')}}" alt="author" style="height: 40px; width:40px">
                                                 </div>
                                                 <!-- Comment Meta -->
                                                 <div class="comment-meta">
@@ -75,7 +75,7 @@
                                     <div class="comment-content d-flex bg-light p-3">
                                         <!-- Comment Author -->
                                         <div class="comment-author  p-0 m-0">
-                                            <img src="{{asset('uploads/images/'.$post->images)}}" alt="author" style="height: 60px; width:60px">
+                                            <img src="{{asset('uploads/images/user.jpg')}}" alt="author" style="height: 60px; width:60px">
                                         </div>
                                         <!-- Comment Meta -->
                                         <div class="comment-meta">
@@ -136,7 +136,7 @@
                     </div>
 
                     <!-- ##### Sidebar Area ##### -->
-                    <div class="col-12 col-md-4 col-lg-3">
+                    <div class="col-12 col-md-4 col-lg-4">
                         <div class="post-sidebar-area">
 
                             <!-- Widget Area -->

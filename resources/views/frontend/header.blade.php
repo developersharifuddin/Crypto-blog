@@ -47,7 +47,7 @@
     </div>
 
     <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
+    <header class="header-area" style="weight:100% !important">
         <!-- Top Header Area -->
         <div class="top-header py-lg-1 my-auto">
             <div class="container px-2 px-md-0">
@@ -90,7 +90,7 @@
 
 
         <!-- Nav Area -->
-        <div class="original-nav-area border-bottom py-0 my-0" id="stickyNav">
+        <div class="original-nav-area border-bottom py-0 my-0" id="stickyNav" style="weight:100% !important">
             <div class="classy-nav-container breakpoint-off py-0 my-0">
                 <div class="container py-0 my-0 px-2 px-md-0">
                     <!-- Classy Menu -->
@@ -118,16 +118,9 @@
                             <div class="classynav">
                                 <ul>
                                     <li><a href="{{url('/')}}">Home</a></li>
-                                    <li><a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="{{route('about')}}">About Us</a></li>
-                                            <li><a href="{{route('contact')}}">Contact</a></li>
-                                            <li><a href="{{route('commingsoon')}}">Coming Soon</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="{{route('commingsoon')}}">Coming Soon</a></li>
                                     <li><a href="{{route('about')}}">About Us</a></li>
-                                    <li><a href="{{route('contact')}}">Contact</a></li>
+                                    <li><a href="{{route('commingsoon')}}">Coming Soon</a></li>
+                                    <li><a href="{{route('contact')}}">Contact-Us</a></li>
                                 </ul>
 
                                 <!-- Search Form  -->

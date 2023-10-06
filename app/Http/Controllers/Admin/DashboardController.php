@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\DB;
@@ -15,16 +16,17 @@ class DashboardController extends Controller
 
                 $contactListcount = DB::table('contact_us')->get();
                 $visitors = DB::table('visitors')->get();
-                $TotalVisitor=DB::table('visitors')->count();
-                $posts=DB::table('posts')->count();
+                $TotalVisitor = DB::table('visitors')->count();
+                $TotalProgram = DB::table('programs')->count();
+                $posts = DB::table('posts')->count();
 
-                if (Schema::hasTable('contact_us')==true) {
+                if (Schema::hasTable('contact_us') == true) {
                     $contactList = DB::table('contact_us')->get();
                     $contactUS = DB::table('contact_us')->take(4)->get();
                 }
                 $company_information =  DB::table('company_information')->get();
                 $users = DB::table('users')->get();
-                 return view('admin.home', [
+                return view('admin.home', [
                     'contactUS' => $contactUS,
                     'contactListcount' => $contactListcount,
                     'contactList' => $contactList,
@@ -33,6 +35,7 @@ class DashboardController extends Controller
                     'TotalVisitor' => $TotalVisitor,
                     'visitors' => $visitors,
                     'posts' => $posts,
+                    'TotalProgram' => $TotalProgram,
 
                 ]);
             } else {
@@ -45,7 +48,7 @@ class DashboardController extends Controller
 
     public function visitors()
     {
-        $visitors = DB::table('visitors')->get();
+        $visitors = DB::table('visitors')->paginate(10);
         return view('admin.visitor', [
             'visitors' => $visitors,
         ]);

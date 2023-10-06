@@ -125,16 +125,16 @@
             <div class="row align-items-center h-auto my-4">
                 <!-- Single Blog Area -->
                 <div class="col-12 col-lg-7">
-                    <div class="single-blog-area clearfix mb-50 mr-lg-2">
+                    <div class="single-blog-area clearfix mb-50">
                         <!-- Blog Content -->
                         <div class="single-blog-content">
                             <div class="post-meta mt-0">
-                                <p><a href="{{ url('/') }}">Cripto Detector9</a></p>
+                                <p><a href="{{ url('/') }}">Crypto Detector9</a></p>
                             </div>
                             <div class="line"></div>
-                            <h2><a href="{{ url('/') }}" class="post-headline">Welcome to Our Cripto Detector9</a></h2>
+                            <h1><a href="{{ url('/') }}" class="post-headline">Welcome to Our Crypto Detector9 Community Team !</a></h1>
                             <div class="post-meta mt-0">
-                                <p>By <a href="{{ url('/') }}"> Cripto Detector9 Community</a></p>
+                                <p>By <a href="{{ url('/') }}"> Crypto Detector9 Community</a></p>
                             </div>
                             <p style="font-size:16px; text-align:justify;  ">
                                 Crypto Detector is a crypto media and crypto enthusiast community based in Asia and sea that discusses Cryptocurency and Blockchain. Detector is a crypto media and crypto enthusiast community based in Asia and sea that discusses Cryptocurency and Blockchain.
@@ -155,7 +155,7 @@
                                         <div class="col-12">
                                             <div class="slide-content text-center">
                                                 <div class="post-tag">
-                                                    <a href="{{ route('singlepost',$post->id) }}" data-animation="fadeInUp">Cripto Detector9</a>
+                                                    <a href="{{ route('singlepost',$post->id) }}" data-animation="fadeInUp">Crypto Detector9</a>
                                                 </div>
                                                 {{-- <h2 data-animation="fadeInUp" data-delay="250ms"><a href="{{ route('singlepost',$post->id) }}">Take a look at last night’s party!</a></h2> --}}
                                             </div>
@@ -180,7 +180,7 @@
                 <h3 class="mb-2" style=" text-align:justify mt-5"><b><i class="fa-solid fa-blog"></i> Our Latest Blog Post </b> </h3>
                 @foreach ($posts as $post)
                 <!-- Single Blog Area  -->
-                <div class="single-blog-area blog-style-2 wow fadeInUp p-0 mb-2 mb-md-5 pb-md-5 border-bottom" data-wow-delay="0.2s" data-wow-duration="1000ms">
+                <div class="single-blog-area blog-style-2 wow fadeInUp p-0 mb-2 mb-md-4 pb-md-4 border-bottom" data-wow-delay="0.2s" data-wow-duration="1000ms">
                     <div class="row my-auto">
                         <div class="col-6 col-md-6 col-lg-6 pr-0 my-auto">
                             <div class="post-user-append pb-3 pb-md-0 my-auto"></div>
@@ -198,17 +198,17 @@
                                 <div class="c">
                                     <div class="post-head col-12 col-md-12 px-0 pt-2 mx-0 my-auto">
 
-                                        <h3 class="pb-0 mb-0 mt-2"><a href="{{ route('singlepost',$post->id) }}" class="post-headline">{!! Str::limit($post->title, 35, ' ...') !!}</a></h3>
+                                        <h4 class="pb-0 mb-0 mt-2"><a href="{{ route('singlepost',$post->id) }}" class="post-headline">{!! Str::limit($post->title, 45, ' ..') !!}</a></h4>
                                         <div class="post-meta mt-0">
-                                            <p><i class="fa-solid fa-user-tie"></i> <span style="color:#17a2b8; text-transfrom:capitalize">By</span>{!! Str::limit($post->name, 20, ' ...') !!}</p>
+                                            <p style="font-size:13px"><i class="fa-solid fa-user-tie"></i> <span style="color:#17a2b8; text-transfrom:capitalize">By</span>{!! Str::limit($post->name, 20, ' ..') !!}</p>
                                         </div>
 
-                                        <p class="pr-2 d-none d-md-block" style=" text-align:left; color:#444; font-size:16px; line-height:1.6;  word-spacing: 7px; ">
+                                        <p class="pr-2 d-none d-md-block" style=" text-align:left; color:#444; font-size:15px; line-height:1.6;">
                                             {{-- {!!\Illuminate\Support\Str::limit(html_entity_decode($post->description),300,"...")!!} --}}
-                                            {!! \Illuminate\Support\Str::limit(strip_tags($post->description), 90, '...') !!}
+                                            {!! \Illuminate\Support\Str::limit(strip_tags($post->description), 90, '..') !!}
                                         </p>
                                         <div class="user mb-3">
-                                            <span class="live-link" style="color:#555"><i class="fa-regular fa-clock"></i> Post <span>{{date('D-M-y h:i A',strtotime($post->date))}}</span></span>
+                                            <span class="live-link" style="color:#555;font-size:13px"><i class="fa-regular fa-clock"></i> Post <span>{{date('D-M-y h:i A',strtotime($post->date))}}</span></span>
                                         </div>
                                     </div>
                                 </div>
@@ -237,63 +237,77 @@
 
                     <!-- Widget Area -->
                     <div class="sidebar-widget-area">
-                        {{-- <h5 class="title mb-3">Advertisement</h5> --}}
-                        <a href="#"><img src="{{asset("frontend/img/add.gif")}}" alt="" width="100%"></a>
+                        {{-- <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+                            <div class="toast-header">
+                                <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <img src="{{asset("frontend/img/add.gif")}}" alt="" width="100%">
+                        <strong class="mr-auto">Bootstrap</strong>
+                        <small>11 mins ago</small>
+
                     </div>
+                    <div class="toast-body">
+                        Hello, world! This is a toast message.
+                    </div>
+                </div> --}}
 
-                    <!-- Widget Area -->
-                    <div class="sidebar-widget-area  d-none d-md-block">
-                        <h5 class="title mb-3">Latest Posts</h5>
+                <a href="#"><img src="{{asset("frontend/img/add.gif")}}" alt="" width="100%"></a>
+            </div>
 
-                        <div class="widget-content">
-                            @foreach ($posts as $post)
-                            <!-- Single Blog Post -->
-                            <div class="row px-md-5">
+            <!-- Widget Area -->
+            <div class="sidebar-widget-area  d-none d-md-block">
+                <h5 class="title mb-3">Latest Posts</h5>
 
-                                <div class="card py-3 pb-0 mb-2" style="max-width: 540px;">
-                                    <div class="row single-blog-post align-items-start mx-auto widget-post mb-0 pb-0">
-                                        <div class="col-6 col-md-6">
-                                            <a href="{{ route('singlepost',$post->id) }}">
-                                                <img class="img-fluid rounded-start" src="{{asset('uploads/images/'.$post->images)}}" alt="">
-                                            </a>
+                <div class="widget-content">
+                    @foreach ($posts as $post)
+                    <!-- Single Blog Post -->
+                    <div class="row px-md-5">
+
+                        <div class="card py-3 pb-0 mb-2" style="max-width: 540px;">
+                            <div class="row single-blog-post align-items-start mx-auto widget-post mb-0 pb-0">
+                                <div class="col-6 col-md-6">
+                                    <a href="{{ route('singlepost',$post->id) }}">
+                                        <img class="img-fluid rounded-start" src="{{asset('uploads/images/'.$post->images)}}" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-6 px-0">
+                                    <div class="card-body post-content text-start p-0">
+                                        <h4 class="p-0 mb-1" style="line-height: .7;"><a href="{{ route('singlepost',$post->id) }}" class="post-headline mb-0">{!! Str::limit($post->title, 32, ' ...') !!}</a></h4>
+                                        <div class="post-meta m-0">
+                                            <p><a href="{{ route('singlepost',$post->id) }}" style="font-size: 10px;">{{date('D-M-y h:i A',strtotime($post->date))}}</a></p>
                                         </div>
-                                        <div class="col-6 col-md-6 px-0">
-                                            <div class="card-body post-content text-start p-0">
-                                                <h4 class="p-0 mb-1" style="line-height: .7;"><a href="{{ route('singlepost',$post->id) }}" class="post-headline mb-0">{!! Str::limit($post->title, 32, ' ...') !!}</a></h4>
-                                                <div class="post-meta m-0">
-                                                    <p><a href="{{ route('singlepost',$post->id) }}" style="font-size: 10px;">{{date('D-M-y h:i A',strtotime($post->date))}}</a></p>
-                                                </div>
-                                                <div class="post-meta m-0">
-                                                    <p style="font-size: 9px; color:#444">By <a href="{{ route('singlepost',$post->id) }}" style="font-size: 8px; color:#444">{!! Str::limit($post->name, 40, ' ...') !!}</a>
-                                                </div>
-                                            </div>
+                                        <div class="post-meta m-0">
+                                            <p style="font-size: 9px; color:#444">By <a href="{{ route('singlepost',$post->id) }}" style="font-size: 8px; color:#444">{!! Str::limit($post->name, 40, ' ...') !!}</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
-
-                            @endforeach
-
                         </div>
                     </div>
 
-                    <!-- Widget Area -->
-                    <div class="sidebar-widget-area">
-                        <h5 class="title">Tags</h5>
-                        <div class="widget-content">
-                            <ul class="tags">
-                                <li><a href="#">Facebook Promote</a></li>
-                                <li><a href="#">Youtube Promote</a></li>
-                                <li><a href="#">Twitter Promote</a></li>
-                                <li><a href="#">Telegram Promotet</a></li>
-                            </ul>
-                        </div>
-                    </div>
+
+
+                    @endforeach
+
+                </div>
+            </div>
+
+            <!-- Widget Area -->
+            <div class="sidebar-widget-area">
+                <h5 class="title">Tags</h5>
+                <div class="widget-content">
+                    <ul class="tags">
+                        <li><a href="#">Facebook Promote</a></li>
+                        <li><a href="#">Youtube Promote</a></li>
+                        <li><a href="#">Twitter Promote</a></li>
+                        <li><a href="#">Telegram Promotet</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+</div>
+</div>
 
-    @include('frontend.footer')
+@include('frontend.footer')

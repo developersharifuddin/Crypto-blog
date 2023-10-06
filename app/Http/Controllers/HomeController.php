@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,20 +15,21 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('frontend.index', [
-            'posts' => Post::where('is_active', 1)
-                ->leftJoin('users', 'posts.user_id', 'users.id')
-                ->select('posts.*', 'users.name')->latest()->get(),
-            'old_posts' => Post::where('is_active', 1)->get(),
-        ]);
+
         date_default_timezone_set("Asia/Dhaka");
-        $visit_time = now();
+        $visit_time = Carbon::now();
         $ip_address = request()->ip();
         $data = ([
             'ip_address' => $ip_address,
             'visit_time' => $visit_time,
         ]);
         DB::table('visitors')->insert($data);
+        return view('frontend.index', [
+            'posts' => Post::where('is_active', 1)
+                ->leftJoin('users', 'posts.user_id', 'users.id')
+                ->select('posts.*', 'users.name')->latest()->get(),
+            'old_posts' => Post::where('is_active', 1)->get(),
+        ]);
     }
 
     public function singlepost($id)
@@ -101,6 +103,6 @@ class HomeController extends Controller
             'ip_address' => $UserIP,
         ]);
         Toastr::success('Your Information will be sent Successfully', 'success', ["positionClass" => "toast-top-right"]);
-        return redirect()->back()->with('message', 'Your Information will be sent Successfully');
+        return redirect()->route("contact");
     }
 }
